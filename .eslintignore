@@ -1,0 +1,11 @@
+node_modules
+.vscode
+coverage
+jest.config.ts
+__mocks__
+*.spec.tsx.snap
+public
+*.scss
+*.jpg
+*.png
+*.jpeg

@@ -10,11 +10,11 @@
     "process": "readonly"
   },
   "extends": [
-    "airbnb-typescript/base",
     "plugin:@typescript-eslint/recommended",
     "prettier",
     "eslint:recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended"
   ],
   "parserOptions": {
     "project": "./tsconfig.json",
@@ -96,7 +96,7 @@
     "@typescript-eslint/no-unused-expressions": "warn",
     "no-use-before-define": "warn",
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": ["warn"],
+    "@typescript-eslint/no-shadow": ["off"],
     "react-hooks/exhaustive-deps": "off",
     "no-unsafe-optional-chaining": "warn",
     "no-useless-escape": "warn"
