@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Layout from './components/Layout';
 import Cart from './components/Cart';
 import Menu, { loader as menuLoader } from './components/Menu';
+import './App.css';
 
 const router = createBrowserRouter([
   {
