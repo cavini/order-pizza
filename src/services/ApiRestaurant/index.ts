@@ -1,5 +1,3 @@
-import { IGetPizzaDTO } from '../../interfaces/pizza';
-
 const API_URL = 'https://react-fast-pizza-api.onrender.com/api';
 
 export const getMenu = async () => {
@@ -15,6 +13,6 @@ export const getOrder = async (id: number) => {
   const res = await fetch(`${API_URL}/order/${id}`);
   if (!res.ok) throw Error(`Couldn't find order #${id}`);
 
-  const { data }: IGetPizzaDTO = await res.json();
+  const { data } = await res.json();
   return data;
 };
