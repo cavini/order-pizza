@@ -5,10 +5,12 @@ import Layout from './components/Layout';
 import Cart from './components/Cart';
 import Menu, { loader as menuLoader } from './components/Menu';
 import './App.css';
+import Error from './components/Error';
 
 const router = createBrowserRouter([
   {
     element: <Layout />,
+    errorElement: <Error />,
     children: [
       {
         path: '/',
@@ -22,6 +24,7 @@ const router = createBrowserRouter([
         path: '/menu',
         element: <Menu />,
         loader: menuLoader,
+        errorElement: <Error />,
       },
     ],
   },
