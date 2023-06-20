@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './components/Home';
 import Layout from './components/Layout';
 import Cart from './components/Cart';
-import Menu from './components/Menu';
+import Menu, { loader as menuLoader } from './components/Menu';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +20,7 @@ const router = createBrowserRouter([
       {
         path: '/menu',
         element: <Menu />,
+        loader: menuLoader,
       },
     ],
   },
