@@ -18,5 +18,11 @@
     "noEmit": true,
     "jsx": "react"
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    ".eslintrc.json",
+    "prettier.config.cjs",
+    "tailwind.config.js",
+    "postcss.config.js"
+  ]
 }
