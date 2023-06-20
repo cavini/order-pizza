@@ -1,7 +1,23 @@
 import React from 'react';
+import { getMenu } from '../../services/ApiRestaurant';
+import { useLoaderData } from 'react-router-dom';
+import { Pizza } from '../../interfaces/pizza';
+import MenuItem from '../MenuItem';
+
+export const loader = async () => {
+  const menu = await getMenu();
+  return menu;
+};
 
 const Menu = () => {
-  return <div>Menu</div>;
+  const menu = useLoaderData();
+  return (
+    <ul>
+      {menu.map((pizza: Pizza) => (
+        <MenuItem pizza={pizza} />
+      ))}
+    </ul>
+  );
 };
 
 export default Menu;
