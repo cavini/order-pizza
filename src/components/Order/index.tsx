@@ -1,18 +1,10 @@
 import React from 'react';
 import { calcMinutesLeft, formatCurrency, formatDate } from '../../utils';
-import { getOrder } from '../../services/ApiRestaurant';
 import { useLoaderData } from 'react-router-dom';
-import { LoaderParams } from './@types';
 import { OrderInterface } from '../../interfaces/pizza';
-
-export const loader = async ({ params }: LoaderParams) => {
-  const order = await getOrder(params.orderId);
-  return order;
-};
 
 const Order = () => {
   const order = useLoaderData() as OrderInterface;
-  console.log(order);
   const {
     priority,
     priorityPrice,

@@ -7,10 +7,6 @@ export interface Pizza {
   soldOut: boolean;
 }
 
-export interface IGetPizzaDTO {
-  status: string;
-  data: Pizza[];
-}
 export interface CartItem {
   pizzaId: number;
   name: string;
@@ -33,7 +29,14 @@ export interface OrderInterface {
   priorityPrice: number;
 }
 
-export interface IGetOrderDTO {
-  status: string;
-  data: OrderInterface[];
+export interface OrderDto extends OrderInterface {
+  createdAt: string;
 }
+
+export interface DTO<T> {
+  status: string;
+  data: T[];
+}
+
+export type IGetOrderDTO = DTO<OrderDto>;
+export type IGetPizzaDTO = DTO<Pizza>;
