@@ -1,7 +1,11 @@
-export interface ParamsParams {
-  orderId: number;
+import { Params } from 'react-router-dom';
+
+export interface ParamsParams extends Params {
+  orderId?: string | undefined;
 }
 
 export interface LoaderParams {
-  params: ParamsParams;
+  params: {
+    [key: string]: string | undefined;
+  };
 }
