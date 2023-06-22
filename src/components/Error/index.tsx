@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { useNavigate, useRouteError } from 'react-router-dom';
+import { useRouteError } from 'react-router-dom';
 import { ErrorInterface } from './@types';
+import NavigateButton from '../Buttons/NavigateButton';
 
 const Error = () => {
-  const navigate = useNavigate();
   const error = useRouteError() as ErrorInterface;
 
   return (
@@ -12,7 +12,7 @@ const Error = () => {
       <h1>Something went wrong 😢</h1>
       <p>{error.data || error.message}</p>
 
-      <button onClick={() => navigate(-1)}>&larr; Go back</button>
+      <NavigateButton>&larr; Go back</NavigateButton>
     </div>
   );
 };
