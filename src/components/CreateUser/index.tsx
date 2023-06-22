@@ -1,11 +1,17 @@
 import React, { FormEvent } from 'react';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateName } from '../../context/user/userSlice';
 
 function CreateUser() {
   const [username, setUsername] = useState('');
+  const dispatch = useDispatch();
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
+
+    if (!username) return;
+    dispatch(updateName(username));
   }
 
   return (
