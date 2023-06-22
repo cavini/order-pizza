@@ -1,21 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import LinkButton from '../Buttons/LinkButton';
+import { ButtonType } from '../Buttons/Button/@types';
+import { fakeCart } from './mock';
+import CartItem from '../CartItem';
+import Button from '../Buttons/Button';
 
 const Cart = () => {
+  const cart = fakeCart;
   return (
-    <div>
-      <Link
-        to="/menu"
-        className="text-sm text-blue-500 hover:text-blue-600 hover:underline"
-      >
+    <div className="px-4 py-3">
+      <LinkButton type={ButtonType.LINK} to="/menu">
         &larr; Back to menu
-      </Link>
+      </LinkButton>
 
-      <h2>Your cart, %NAME%</h2>
+      <h2 className="mt-7 text-xl font-semibold">Your cart, %NAME%</h2>
 
-      <div>
-        <Link to="/order/new">Order pizzas</Link>
-        <button>Clear cart</button>
+      <ul className="mt-3 divide-y divide-stone-200 border-b">
+        {cart.map((item) => (
+          <CartItem item={item} key={item.pizzaId} />
+        ))}
+      </ul>
+
+      <div className="mt-6 space-x-2">
+        <LinkButton type={ButtonType.PRIMARY} to="/order/new">
+          Order pizzas
+        </LinkButton>
+        <Button type={ButtonType.SECONDARY}>Clear cart</Button>
       </div>
     </div>
   );

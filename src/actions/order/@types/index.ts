@@ -1,4 +1,4 @@
-import { CartItem, OrderInterface } from '../../../interfaces/pizza';
+import { CartItemInterface, OrderInterface } from '../../../interfaces/pizza';
 
 export enum Priority {
   ON = 'on',
@@ -6,6 +6,6 @@ export enum Priority {
 }
 
 export interface ActionOrder extends Pick<OrderInterface, 'phone'> {
-  cart: CartItem[];
+  cart: CartItemInterface[];
   priority: boolean;
 }
