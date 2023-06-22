@@ -4,11 +4,11 @@
 
 @layer components {
   .input {
-    @apply w-full rounded-full border border-stone-200 px-4 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring focus:ring-yellow-400 md:px-6 md:py-3;
+    @apply rounded-full border border-stone-200 px-4 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring focus:ring-yellow-400 md:px-6 md:py-3;
   }
 
   .button {
-    @apply inline-block rounded-full  px-4 py-3  font-semibold uppercase tracking-wide text-stone-800 transition-colors duration-300  focus:outline-none focus:ring  focus:ring-offset-2 disabled:cursor-not-allowed sm:px-6 sm:py-4;
+    @apply inline-block rounded-full px-4  py-3 text-sm  font-semibold uppercase tracking-wide text-stone-800 transition-colors duration-300  focus:outline-none focus:ring  focus:ring-offset-2 disabled:cursor-not-allowed sm:px-6 sm:py-4;
   }
 
   .link-button {
