@@ -34,7 +34,8 @@ export const isValidPhone = (str: string) =>
 export const validateForm = (order: ActionOrder): Errors | null => {
   const errors: Errors = {};
   if (!isValidPhone(order.phone)) {
-    errors.phone = 'The phone number provided is incorrect.';
+    errors.phone =
+      'The phone number provided is incorrect. Please provide a valid phone number.';
   }
 
   if (Object.keys(errors).length > 0) return errors;

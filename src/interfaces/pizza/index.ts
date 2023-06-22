@@ -7,7 +7,7 @@ export interface Pizza {
   soldOut: boolean;
 }
 
-export interface CartItem {
+export interface CartItemInterface {
   pizzaId: number;
   name: string;
   quantity: number;
@@ -23,7 +23,7 @@ export interface OrderInterface {
   address: string;
   priority: boolean;
   estimatedDelivery: string;
-  cart: CartItem[];
+  cart: CartItemInterface[];
   position: string;
   orderPrice: number;
   priorityPrice: number;

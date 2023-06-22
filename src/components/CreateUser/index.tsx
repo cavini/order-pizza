@@ -2,6 +2,8 @@ import React, { FormEvent } from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateName } from '../../context/user/userSlice';
+import Button from '../Buttons/Button';
+import { ButtonType } from '../Buttons/Button/@types';
 
 function CreateUser() {
   const [username, setUsername] = useState('');
@@ -21,7 +23,7 @@ function CreateUser() {
       </p>
 
       <input
-        className="w-72"
+        className="input mb-8 w-72"
         type="text"
         placeholder="Your full name"
         value={username}
@@ -30,7 +32,7 @@ function CreateUser() {
 
       {username !== '' && (
         <div>
-          <button>Start ordering</button>
+          <Button type={ButtonType.PRIMARY}>Start ordering</Button>
         </div>
       )}
     </form>
