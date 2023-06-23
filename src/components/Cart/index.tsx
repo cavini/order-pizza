@@ -1,17 +1,18 @@
 import React from 'react';
 import LinkButton from '../Buttons/LinkButton';
 import { ButtonType } from '../Buttons/Button/@types';
-import { fakeCart } from './mock';
 import CartItem from '../CartItem';
 import Button from '../Buttons/Button';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearCart, getCart } from '../../context/cart/cartSlice';
+import { getUser } from '../../context/user/userSlice';
+import EmptyCart from '../EmptyCart';
 
 const Cart = () => {
-  const username = useSelector<RootState, string>(
-    (state) => state.user.username
-  );
-  const cart = fakeCart;
+  const username = useSelector(getUser);
+  const cart = useSelector(getCart);
+  const dispatch = useDispatch();
+  if (!cart.length) return <EmptyCart />;
   return (
     <div className="px-4 py-3">
       <LinkButton type={ButtonType.LINK} to="/menu">
@@ -30,7 +31,12 @@ const Cart = () => {
         <LinkButton type={ButtonType.PRIMARY} to="/order/new">
           Order pizzas
         </LinkButton>
-        <Button type={ButtonType.SECONDARY}>Clear cart</Button>
+        <Button
+          onClick={() => dispatch(clearCart())}
+          type={ButtonType.SECONDARY}
+        >
+          Clear cart
+        </Button>
       </div>
     </div>
   );

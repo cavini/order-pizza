@@ -5,6 +5,7 @@ export enum ButtonType {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
   LINK = 'link',
+  ROUND = 'round',
 }
 
 export interface ButtonProps {
@@ -12,4 +13,5 @@ export interface ButtonProps {
   disabled?: boolean;
   className?: string;
   type?: ButtonType;
+  onClick?: () => void;
 }
