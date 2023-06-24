@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../Header';
-import CartOverview from '../CartOverview';
+import CartOverview from '../../features/cart/CartOverview';
 import { Outlet, useNavigation } from 'react-router-dom';
 import { NavigationStatus } from '../../interfaces/useNavigation';
 import Loading from '../Loading';

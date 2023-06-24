@@ -1,5 +1,5 @@
 import React from 'react';
-import CreateUser from '../CreateUser';
+import CreateUser from '../../features/user/CreateUser';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import LinkButton from '../Buttons/LinkButton';

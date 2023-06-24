@@ -15,28 +15,9 @@ export interface CartItemInterface {
   totalPrice: number;
 }
 
-export interface OrderInterface {
-  id: string;
-  status: string;
-  customer: string;
-  phone: string;
-  address: string;
-  priority: boolean;
-  estimatedDelivery: string;
-  cart: CartItemInterface[];
-  position: string;
-  orderPrice: number;
-  priorityPrice: number;
-}
-
-export interface OrderDto extends OrderInterface {
-  createdAt: string;
-}
-
 export interface DTO<T> {
   status: string;
   data: T[];
 }
 
-export type IGetOrderDTO = DTO<OrderDto>;
 export type IGetPizzaDTO = DTO<Pizza>;

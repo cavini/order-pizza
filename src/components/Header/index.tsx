@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SearchOrder from '../SearchOrder';
-import User from '../User';
+import SearchOrder from '../../features/order/SearchOrder';
+import User from '../../features/user/User';
 
 const Header = () => {
   return (

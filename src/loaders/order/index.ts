@@ -1,4 +1,4 @@
-import { LoaderParams } from '../../components/Order/@types';
+import { LoaderParams } from '../../features/order/Order/@types';
 import { getOrder } from '../../services/ApiRestaurant';
 
 export const loader = async ({ params }: LoaderParams) => {

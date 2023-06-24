@@ -1,5 +1,6 @@
-import { ActionOrder } from '../../actions/order/@types';
-import { IGetPizzaDTO, OrderDto } from '../../interfaces/pizza';
+import { ActionOrder } from '../../context/actions/order/@types';
+import { IPatchOrderDTO, OrderDto } from '../../interfaces/order';
+import { IGetPizzaDTO } from '../../interfaces/pizza';
 
 const API_URL = 'https://react-fast-pizza-api.onrender.com/api';
 
@@ -35,5 +36,21 @@ export const createOrder = async (newOrder: ActionOrder): Promise<OrderDto> => {
     return data;
   } catch {
     throw Error('Failed creating your order');
+  }
+};
+
+export const updateOrder = async (id: string, updateObj: IPatchOrderDTO) => {
+  try {
+    const res = await fetch(`${API_URL}/order/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify(updateObj),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!res.ok) throw Error();
+  } catch (error) {
+    throw Error('Failed to update your order');
   }
 };
