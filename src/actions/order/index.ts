@@ -2,6 +2,8 @@ import { redirect } from 'react-router-dom';
 import { createOrder } from '../../services/ApiRestaurant';
 import { validateForm } from '../../utils';
 import { ActionOrder, Priority } from './@types';
+import store from '../../store';
+import { clearCart } from '../../context/cart/cartSlice';
 
 export const action = async ({ request }: any) => {
   const formData = await request.formData();
@@ -21,5 +23,7 @@ export const action = async ({ request }: any) => {
   }
 
   const newOrder = await createOrder(order);
+
+  store.dispatch(clearCart());
   return redirect(`/order/${newOrder.id}`);
 };
