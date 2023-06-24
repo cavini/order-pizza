@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
+
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -11,11 +12,17 @@
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "noUncheckedIndexedAccess": false,
     "resolveJsonModule": true,
-
     "isolatedModules": false,
     "noEmit": true,
     "jsx": "react"
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    ".eslintrc.json",
+    "prettier.config.cjs",
+    "tailwind.config.js",
+    "postcss.config.js"
+  ]
 }
