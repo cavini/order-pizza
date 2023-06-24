@@ -1,4 +1,4 @@
-import { ActionOrder } from '../actions/order/@types';
+import { ActionOrder } from '../context/actions/order/@types';
 
 export const formatCurrency = (value: number) => {
   return new Intl.NumberFormat('en', {
