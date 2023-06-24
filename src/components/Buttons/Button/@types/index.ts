@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { FormEvent, ReactNode } from 'react';
 
 export enum ButtonType {
   SMALL = 'small',
@@ -13,5 +13,5 @@ export interface ButtonProps {
   disabled?: boolean;
   className?: string;
   type?: ButtonType;
-  onClick?: () => void;
+  onClick?: (event: FormEvent) => void;
 }
